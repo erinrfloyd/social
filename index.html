@@ -114,23 +114,23 @@
     .card-bullets { list-style: none; margin: 0.8rem 0 0; display: flex; flex-direction: column; gap: 0.35rem; }
     .card-bullets li { font-size: 0.8rem; color: rgba(242,213,216,0.65); line-height: 1.55; padding-left: 1rem; position: relative; }
     .card-bullets li::before { content: '—'; position: absolute; left: 0; color: var(--dusty); font-size: 0.6rem; top: 0.18em; }
-    .card-demo-btn { display: inline-block; margin-bottom: 1rem; padding: 0.4rem 1rem; border: 1px solid var(--dusty); color: var(--dusty); font-family: 'DM Sans', sans-serif; font-size: 0.68rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; transition: background 0.2s, color 0.2s; border-radius: 2px; }
-    .card-demo-btn:hover { background: var(--dusty); color: var(--claret); }
     .card-kpis { display: flex; border-top: 1px solid rgba(242,213,216,0.18); margin-top: 1.2rem; padding-top: 0.9rem; gap: 0; flex-wrap: wrap; }
     .card-kpi { flex: 1; padding: 0 0.8rem 0 0; min-width: 0; }
     .card-kpi + .card-kpi { padding-left: 0.8rem; border-left: 1px solid rgba(242,213,216,0.14); }
     .card-kpi-num { display: block; font-family: 'DM Sans', sans-serif; font-size: 1.05rem; font-weight: 800; color: var(--dusty); line-height: 1.1; }
     .card-kpi-label { display: block; font-family: 'DM Sans', sans-serif; font-size: 0.58rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(242,213,216,0.5); margin-top: 0.2rem; }
+    .card-demo-btn { display: inline-block; margin-bottom: 1rem; padding: 0.4rem 1rem; border: 1px solid var(--dusty); color: var(--dusty); font-family: 'DM Sans', sans-serif; font-size: 0.68rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; transition: background 0.2s, color 0.2s; border-radius: 2px; }
+    .card-demo-btn:hover { background: var(--dusty); color: var(--claret); }
 
     /* GRAYSCALE + GRAIN */
     .card-img:not(.card-img-ph):not(.card-img-icon) { filter: grayscale(100%); transition: filter 0.4s ease; }
     .card:hover .card-img:not(.card-img-icon) { filter: grayscale(0%); }
-    .card-img:not(.card-img-ph)::after {
+    .card-img:not(.card-img-ph):not(.card-img-icon)::after {
       content: ''; position: absolute; inset: 0;
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='250'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='250' height='250' filter='url(%23g)'/%3E%3C/svg%3E");
       background-repeat: repeat; background-size: 250px 250px; mix-blend-mode: overlay; opacity: 0.55; pointer-events: none; z-index: 3; transition: opacity 0.4s ease;
     }
-    .card:hover .card-img:not(.card-img-ph)::after { opacity: 0.2; }
+    .card:hover .card-img:not(.card-img-ph):not(.card-img-icon)::after { opacity: 0.2; }
 
     /* PHOTOGRAPHY */
     #photography { background: var(--dark); padding: 4rem 6rem; }
@@ -139,8 +139,8 @@
     #photography .divider { background: var(--dusty); margin-bottom: 2rem; }
     .photo-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.75rem; }
     .photo-tile { aspect-ratio: 2/3; overflow: hidden; }
-    .photo-tile img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; filter: grayscale(100%); transition: filter 0.4s ease, transform 0.4s ease; }
-    .photo-tile:hover img { filter: grayscale(0%); transform: scale(1.03); }
+    .photo-tile img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; transition: transform 0.4s ease; }
+    .photo-tile:hover img { transform: scale(1.03); }
 
     /* TESTIMONIAL */
     #testimonial { background: var(--dark); padding: 6rem 8rem; position: relative; overflow: hidden; }
@@ -474,43 +474,6 @@
       </div>
     </div>
 
-    <!-- 4. Paid Creative Strategy & Testing Frameworks -->
-    <div class="capability-group">
-      <p class="capability-label reveal">Paid Creative Strategy &amp; Testing Frameworks</p>
-      <div class="projects-grid-2">
-
-        <div class="card reveal">
-          <div class="card-img" style="background-image:url('mac-meta.jpg')"></div>
-          <div class="card-body">
-            <div class="card-num">10</div>
-            <p class="card-cat">Paid Creative Strategy</p>
-            <h3 class="card-title"><span class="card-brand">MAC Cosmetics</span>Studio Radiance Foundation Paid Creative Strategy</h3>
-            <p class="card-desc">Led audience research and persona development to define the insight foundation for paid creative strategy. Translated persona analysis into a messaging hierarchy, creative hypotheses and a structured testing framework — enabling systematic creative experimentation across audience segments. Directed creative optimisation based on performance data, improving thruplay rates, lead volume and reach against paid targets.</p>
-            <div class="card-kpis">
-              <div class="card-kpi"><span class="card-kpi-num">+31%</span><span class="card-kpi-label">Meta thruplays above target</span></div>
-              <div class="card-kpi"><span class="card-kpi-num">25,000</span><span class="card-kpi-label">TikTok leads</span></div>
-              <div class="card-kpi"><span class="card-kpi-num">+38%</span><span class="card-kpi-label">Reach over target</span></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="card reveal">
-          <div class="card-img" style="background-image:url('foot.jpg'); background-position: center bottom;"></div>
-          <div class="card-body">
-            <div class="card-num">11</div>
-            <p class="card-cat">Paid Creative Strategy</p>
-            <h3 class="card-title"><span class="card-brand">Karo Health</span>CCS Foot Care — Removing the Creative Constraint to Growth</h3>
-            <p class="card-desc">Diagnosed creative as the primary growth constraint within a profitable Meta programme. Developed an audience-first testing framework informed by consumer research, alongside implementing a best-practice UGC creative structure and shifting late asset messaging from product features to real consumer pain points.</p>
-            <div class="card-kpis">
-              <div class="card-kpi"><span class="card-kpi-num">+21%</span><span class="card-kpi-label">Hook retention</span></div>
-              <div class="card-kpi"><span class="card-kpi-num">+0.9pp</span><span class="card-kpi-label">CTR</span></div>
-              <div class="card-kpi"><span class="card-kpi-num">2.4×</span><span class="card-kpi-label">ROAS vs. control</span></div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
 
   </section>
 
@@ -519,14 +482,10 @@
     <h2 class="section-title reveal">Photography</h2>
     <div class="divider reveal"></div>
     <div class="photo-grid">
-      <div class="photo-tile reveal"><img src="1.png" alt="Editorial photography" /></div>
-      <div class="photo-tile reveal"><img src="2.jpg" alt="Backstage photography" /></div>
-      <div class="photo-tile reveal"><img src="3.jpg" alt="Events photography" /></div>
-      <div class="photo-tile reveal"><img src="4.jpg" alt="Editorial photography" /></div>
-      <div class="photo-tile reveal"><img src="5.jpg" alt="Backstage photography" /></div>
-      <div class="photo-tile reveal"><img src="6.png" alt="Editorial photography" /></div>
-      <div class="photo-tile reveal"><img src="7.png" alt="Events photography" /></div>
-      <div class="photo-tile reveal"><img src="8.jpg" alt="Backstage photography" /></div>
+      <div class="photo-tile reveal"><img src="photo1.png" alt="Editorial photography" /></div>
+      <div class="photo-tile reveal"><img src="photo2.jpg" alt="Backstage photography" /></div>
+      <div class="photo-tile reveal"><img src="photo3.png" alt="Events photography" /></div>
+      <div class="photo-tile reveal"><img src="photo4.png" alt="Editorial photography" /></div>
     </div>
   </section>
 
@@ -538,7 +497,7 @@
       <p class="contact-intro">Whether you have a project in mind, want to collaborate, or just want to say hello — I'd love to hear from you.</p>
       <div class="ci">
         <div class="ci-icon" style="font-size:0.75rem;font-weight:700;">in</div>
-        <div class="ci-detail"><span>LinkedIn</span><a href="#">linkedin.com/in/erin</a></div>
+        <div class="ci-detail"><span>LinkedIn</span><a href="https://www.linkedin.com/in/erinrfloyd/" target="_blank">linkedin.com/in/erinrfloyd</a></div>
       </div>
       <div class="ci">
         <div class="ci-icon">📍</div>
