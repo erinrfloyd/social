@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Erin — Marketing Portfolio</title>
+  <title>Erin — Creative Growth Strategy Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
     :root {
@@ -13,7 +13,6 @@
       --white:  #FAF6F4;
       --dark:   #1A0A0E;
       --mid:    #9E4A5C;
-      /* map old names so nothing breaks */
       --tangerine: var(--claret);
       --peach-mid: var(--dusty);
       --peach:     var(--blush);
@@ -38,45 +37,24 @@
     .nav-links a:hover { color: var(--claret); }
 
     /* HERO */
-    #home { display: grid; grid-template-columns: 1fr; grid-template-rows: auto auto; position: relative; overflow: hidden; padding: 0; }
+    #home { display: grid; grid-template-columns: 1fr; position: relative; overflow: hidden; padding: 0; }
     .hero-left { background: var(--claret); display: flex; flex-direction: row; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 2rem; padding: 8rem 8rem 3rem; position: relative; }
-    .hero-right { display: none; }
-    .hero-right-dup { display: none; }
-    .hero-right-img { display: none; }
     .hero-left-text { flex: 1; min-width: 280px; }
     .hero-left-actions { display: flex; flex-direction: column; align-items: flex-start; gap: 1rem; }
-    .hero-eyebrow { font-family: 'DM Sans', sans-serif; font-size: 0.78rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--dusty); margin-bottom: 1.2rem; animation: fadeUp 0.8s ease both; }
     .hero-name { font-family: 'Playfair Display', serif; font-size: clamp(3rem, 5vw, 5.5rem); font-weight: 900; color: rgba(250,246,244,0.38); line-height: 1; margin-bottom: 0; animation: fadeUp 0.8s 0.15s ease both; }
     .hero-name em { font-style: italic; color: var(--white); }
-    .hero-tagline { font-family: 'DM Sans', sans-serif; font-size: 1rem; color: rgba(242,213,216,0.88); max-width: 420px; line-height: 1.75; margin-bottom: 2rem; animation: fadeUp 0.8s 0.3s ease both; }
+    .hero-tagline { font-family: 'DM Sans', sans-serif; font-size: 1rem; color: rgba(242,213,216,0.88); max-width: 480px; line-height: 1.75; margin-bottom: 2rem; animation: fadeUp 0.8s 0.3s ease both; }
     .hero-cta { display: inline-block; padding: 0.9rem 2.2rem; background: var(--dusty); color: var(--claret); text-decoration: none; font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 0.85rem; letter-spacing: 0.06em; text-transform: uppercase; transition: background 0.2s, transform 0.2s; animation: fadeUp 0.8s 0.45s ease both; }
     .hero-cta:hover { background: var(--white); color: var(--claret); transform: translateY(-2px); }
     .hero-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.8rem; }
     .hero-tag { padding: 0.35rem 0.9rem; background: rgba(242,213,216,0.12); border: 1px solid rgba(242,213,216,0.3); color: rgba(242,213,216,0.85); font-family: 'DM Sans', sans-serif; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; border-radius: 2px; }
-    .hero-stats-band {
-      background: var(--blush);
-      padding: 0;
-      overflow: hidden;
-      border-top: 1px solid rgba(107,27,47,0.1);
-      border-bottom: 1px solid rgba(107,27,47,0.1);
-    }
-    .stats-track {
-      display: flex;
-      width: max-content;
-      animation: statsScroll 35s linear infinite;
-      align-items: stretch;
-    }
+
+    /* STATS BAND */
+    .hero-stats-band { background: var(--blush); padding: 0; overflow: hidden; border-top: 1px solid rgba(107,27,47,0.1); border-bottom: 1px solid rgba(107,27,47,0.1); }
+    .stats-track { display: flex; width: max-content; animation: statsScroll 35s linear infinite; align-items: stretch; }
     .stats-track:hover { animation-play-state: paused; }
-    .stat-item {
-      display: flex; flex-direction: column; justify-content: center;
-      padding: 0.9rem 2.8rem;
-      border-right: 1px solid rgba(107,27,47,0.15);
-      flex-shrink: 0;
-    }
-    @keyframes statsScroll {
-      0%   { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
+    .stat-item { display: flex; flex-direction: column; justify-content: center; padding: 0.9rem 2.8rem; border-right: 1px solid rgba(107,27,47,0.15); flex-shrink: 0; }
+    @keyframes statsScroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
     .stat-num { font-family: 'Playfair Display', serif; font-size: 1.9rem; font-weight: 700; color: var(--claret); display: block; line-height: 1.1; }
     .stat-label { font-family: 'DM Sans', sans-serif; font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--mid); }
 
@@ -87,104 +65,72 @@
     .divider { width: 48px; height: 3px; background: var(--dusty); margin-bottom: 2.5rem; }
 
     /* ABOUT */
-    #about { background: var(--white); display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
-    .about-visual { position: relative; height: 480px; }
-    .ab { position: absolute; border-radius: 2px; }
-    .ab1 { display: none; }
-    .ab2 { background: var(--dusty); width: 78%; height: 82%; top: calc(5% + 32px); left: calc(5% + 32px); border: none; overflow: hidden; }
-    .ab2::after { content: ''; position: absolute; inset: 0; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='250'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='250' height='250' filter='url(%23g)'/%3E%3C/svg%3E"); background-repeat: repeat; background-size: 250px 250px; mix-blend-mode: overlay; opacity: 0.5; pointer-events: none; }
-    .ab3 { background: var(--dusty); width: 28%; height: 28%; top: 55%; left: 55%; z-index: 2; }
-    .ab-init { position: absolute; top: 50%; left: 40%; transform: translate(-50%, -50%); font-family: 'Barlow', sans-serif; font-size: 5rem; font-weight: 900; color: rgba(250,246,244,0.3); z-index: 1; pointer-events: none; }
-    .about-photo {
-      position: absolute;
-      top: 5%; left: 5%;
-      width: 78%; height: 82%;
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center center;
-      border-radius: 2px;
-      z-index: 3;
-    }
+    #about { background: var(--white); display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; padding-top: 3.5rem; }
+    .about-visual { position: relative; display: flex; align-items: flex-start; }
+    .about-photo-wrap { position: relative; display: inline-block; }
+    .about-photo-wrap .ab2 { position: absolute; background: var(--dusty); width: 100%; height: 100%; top: 20px; left: 20px; border-radius: 2px; z-index: 0; }
+    .about-photo-img { display: block; max-height: 480px; width: auto; position: relative; z-index: 1; border-radius: 2px; }
     .about-text p { font-size: 1rem; line-height: 1.85; color: #2A0A12; margin-bottom: 1.2rem; }
-    .tags { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.8rem; }
-    .tag { padding: 0.4rem 1rem; background: var(--blush); color: var(--claret); font-size: 0.8rem; font-weight: 500; letter-spacing: 0.06em; border-radius: 2px; }
 
-    /* LOGOS SECTION */
-    #clients {
-      background: var(--cream);
-      padding: 15px 0 1.2rem;
-      border-bottom: 1px solid rgba(200,90,18,0.1);
-      overflow: hidden;
-    }
-    .clients-label {
-      font-family: 'DM Sans', sans-serif; font-size: 0.72rem; letter-spacing: 0.25em; text-transform: uppercase;
-      color: var(--mid); text-align: center; margin-bottom: 0.7rem;
-    }
-    .logo-track-wrapper {
-      overflow: hidden;
-      position: relative;
-      width: 100%;
-    }
-    .logo-track-wrapper::before,
-    .logo-track-wrapper::after {
-      content: '';
-      position: absolute; top: 0; bottom: 0; width: 80px; z-index: 2;
-      pointer-events: none;
-    }
+    /* LOGOS */
+    #clients { background: var(--cream); padding: 15px 0 1.2rem; border-bottom: 1px solid rgba(200,90,18,0.1); overflow: hidden; }
+    .clients-label { font-family: 'DM Sans', sans-serif; font-size: 0.72rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--mid); text-align: center; margin-bottom: 0.7rem; }
+    .logo-track-wrapper { overflow: hidden; position: relative; width: 100%; }
+    .logo-track-wrapper::before, .logo-track-wrapper::after { content: ''; position: absolute; top: 0; bottom: 0; width: 80px; z-index: 2; pointer-events: none; }
     .logo-track-wrapper::before { left: 0; background: linear-gradient(to right, #FAF6F4, transparent); }
     .logo-track-wrapper::after  { right: 0; background: linear-gradient(to left, #FAF6F4, transparent); }
-    .logo-track {
-      display: flex; align-items: center; gap: 4rem;
-      width: max-content;
-      animation: logoScroll 35s linear infinite;
-    }
+    .logo-track { display: flex; align-items: center; gap: 4rem; width: max-content; animation: logoScroll 35s linear infinite; }
     .logo-track:hover { animation-play-state: paused; }
-    .logo-item {
-      flex-shrink: 0;
-      display: flex; align-items: center; justify-content: center;
-      height: 48px;
-    }
-    .logo-item img {
-      max-height: 48px;
-      max-width: 140px;
-      width: auto;
-      object-fit: contain;
-    }
-    @keyframes logoScroll {
-      0%   { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
+    .logo-item { flex-shrink: 0; display: flex; align-items: center; justify-content: center; height: 48px; }
+    .logo-item img { max-height: 48px; max-width: 140px; width: auto; object-fit: contain; }
+    @keyframes logoScroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
     /* PROJECTS */
-    #projects { background: var(--peach); }
+    #projects { background: var(--peach); padding-bottom: 2.8rem; }
     #projects .section-label { color: var(--mid); }
     #projects .section-title { color: var(--claret); }
     #projects .divider { background: var(--tangerine); }
-    .projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 1rem; }
+    .capability-group { margin-bottom: 4rem; }
+    .capability-group:last-child { margin-bottom: 0; }
+    .capability-label { font-family: 'DM Sans', sans-serif; font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--mid); border-top: 1px solid rgba(107,27,47,0.2); padding-top: 1.4rem; margin-bottom: 1.4rem; }
+    .projects-grid   { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+    .projects-grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+    .projects-grid-1 { display: grid; grid-template-columns: 1fr; gap: 2rem; max-width: 520px; }
+
+    /* CARDS */
     .card { background: var(--tangerine); border: 1px solid rgba(200,90,18,0.3); overflow: hidden; cursor: pointer; transition: transform 0.3s; display: flex; flex-direction: column; position: relative; }
     .card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: var(--orange); transform: scaleX(0); transform-origin: left; transition: transform 0.3s; }
     .card:hover { transform: translateY(-6px); }
     .card:hover::after { transform: scaleX(1); }
     .card-img { width: 100%; aspect-ratio: 1 / 1; background-size: cover; background-position: center; background-repeat: no-repeat; flex-shrink: 0; position: relative; overflow: hidden; }
-    .card-img-ph { background: linear-gradient(135deg, var(--mid) 0%, #5A2A08 100%); display: flex; align-items: center; justify-content: center; }
-    .card-img-ph::after { content: 'E'; font-family: 'Barlow', sans-serif; font-size: 4rem; font-weight: 900; color: rgba(212,145,154,0.3); }
+    .card-img-ph { background: linear-gradient(135deg, var(--mid) 0%, #3A1020 100%); }
     .card-body { padding: 1.8rem 1.8rem 2rem; flex: 1; position: relative; }
     .card-num { font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 700; color: rgba(107,27,47,0.12); position: absolute; top: 0.8rem; right: 1.2rem; line-height: 1; }
     .card-cat { font-family: 'DM Sans', sans-serif; font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--dusty); margin-bottom: 0.6rem; }
     .card-title { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; color: var(--white); margin-bottom: 0.7rem; line-height: 1.2; padding-right: 2rem; }
     .card-brand { display: block; font-family: 'DM Sans', sans-serif; font-size: 0.9rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--dusty); margin-bottom: 0.25rem; }
     .card-desc { font-size: 0.85rem; color: rgba(242,213,216,0.78); line-height: 1.7; }
-    .card-result { margin-top: 1.2rem; display: block; font-family: 'DM Sans', sans-serif; font-size: 0.75rem; font-weight: 500; color: var(--dusty); letter-spacing: 0.04em; }
-    .card-channels { font-family: 'DM Sans', sans-serif; font-size: 0.78rem; color: rgba(242,213,216,0.55); margin-top: 0.5rem; letter-spacing: 0.02em; }
-    .card-bullets { list-style: none; margin: 0.6rem 0 0; display: flex; flex-direction: column; gap: 0.22rem; }
-    .card-bullets li { font-size: 0.78rem; color: rgba(250,224,200,0.65); line-height: 1.5; padding-left: 0.9rem; position: relative; }
-    .card-bullets li::before { content: '—'; position: absolute; left: 0; color: var(--dusty); font-size: 0.6rem; top: 0.15em; }
-    .card-soon { font-style: italic; color: rgba(212,145,154,0.55) !important; }
-    .card-kpis { display: flex; border-top: 1px solid rgba(242,213,216,0.18); margin-top: 1.2rem; padding-top: 0.9rem; gap: 0; }
-    .card-kpi { flex: 1; padding: 0 0.8rem 0 0; }
+    .card-outcome { margin-top: 1rem; font-size: 0.8rem; font-style: italic; color: rgba(242,213,216,0.6); line-height: 1.6; border-left: 2px solid rgba(212,145,154,0.3); padding-left: 0.8rem; }
+    .card-bullets { list-style: none; margin: 0.8rem 0 0; display: flex; flex-direction: column; gap: 0.35rem; }
+    .card-bullets li { font-size: 0.8rem; color: rgba(242,213,216,0.65); line-height: 1.55; padding-left: 1rem; position: relative; }
+    .card-bullets li::before { content: '—'; position: absolute; left: 0; color: var(--dusty); font-size: 0.6rem; top: 0.18em; }
+    .card-demo-btn { display: inline-block; margin-bottom: 1rem; padding: 0.4rem 1rem; border: 1px solid var(--dusty); color: var(--dusty); font-family: 'DM Sans', sans-serif; font-size: 0.68rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; transition: background 0.2s, color 0.2s; border-radius: 2px; }
+    .card-demo-btn:hover { background: var(--dusty); color: var(--claret); }
+    .card-kpis { display: flex; border-top: 1px solid rgba(242,213,216,0.18); margin-top: 1.2rem; padding-top: 0.9rem; gap: 0; flex-wrap: wrap; }
+    .card-kpi { flex: 1; padding: 0 0.8rem 0 0; min-width: 0; }
     .card-kpi + .card-kpi { padding-left: 0.8rem; border-left: 1px solid rgba(242,213,216,0.14); }
     .card-kpi-num { display: block; font-family: 'DM Sans', sans-serif; font-size: 1.05rem; font-weight: 800; color: var(--dusty); line-height: 1.1; }
     .card-kpi-label { display: block; font-family: 'DM Sans', sans-serif; font-size: 0.58rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(242,213,216,0.5); margin-top: 0.2rem; }
+
+    /* GRAYSCALE + GRAIN */
+    .card-img:not(.card-img-ph):not(.card-img-icon) { filter: grayscale(100%); transition: filter 0.4s ease; }
+    .card:hover .card-img:not(.card-img-icon) { filter: grayscale(0%); }
+    .card-img:not(.card-img-ph)::after {
+      content: ''; position: absolute; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='250'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='250' height='250' filter='url(%23g)'/%3E%3C/svg%3E");
+      background-repeat: repeat; background-size: 250px 250px; mix-blend-mode: overlay; opacity: 0.55; pointer-events: none; z-index: 3; transition: opacity 0.4s ease;
+    }
+    .card:hover .card-img:not(.card-img-ph)::after { opacity: 0.2; }
 
     /* PHOTOGRAPHY */
     #photography { background: var(--dark); padding: 4rem 6rem; }
@@ -192,14 +138,21 @@
     #photography .section-title { color: var(--white); font-size: clamp(1.6rem, 3vw, 2.4rem); }
     #photography .divider { background: var(--dusty); margin-bottom: 2rem; }
     .photo-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.75rem; }
-    .photo-tile { aspect-ratio: 2/3; overflow: hidden; position: relative; }
+    .photo-tile { aspect-ratio: 2/3; overflow: hidden; }
     .photo-tile img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; filter: grayscale(100%); transition: filter 0.4s ease, transform 0.4s ease; }
     .photo-tile:hover img { filter: grayscale(0%); transform: scale(1.03); }
 
+    /* TESTIMONIAL */
+    #testimonial { background: var(--dark); padding: 6rem 8rem; position: relative; overflow: hidden; }
+    #testimonial::before { content: '\201C'; font-family: 'Playfair Display', serif; font-weight: 900; font-size: 22rem; line-height: 1; color: var(--claret); opacity: 0.15; position: absolute; top: -3rem; left: 4rem; pointer-events: none; }
+    .testimonial-inner { max-width: 860px; position: relative; z-index: 1; }
+    .testimonial-quote { font-family: 'Playfair Display', serif; font-size: clamp(1.3rem, 2.2vw, 1.85rem); font-style: italic; color: var(--white); line-height: 1.7; margin-bottom: 2.2rem; }
+    .testimonial-quote em { font-style: normal; color: var(--dusty); font-weight: 700; }
+    .testimonial-cite { display: inline-block; font-family: 'Courier Prime', serif; font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--peach-mid); border-left: 3px solid var(--orange); padding-left: 1rem; line-height: 1.9; }
+    .testimonial-cite span { display: block; color: rgba(240,160,106,0.55); letter-spacing: 0.08em; text-transform: none; font-size: 0.75rem; }
+
     /* CONTACT */
-    #projects { padding-bottom: 2.8rem; }
-    #contact { padding-top: 2.8rem; }
-    #contact { background: var(--blush); display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; }
+    #contact { padding-top: 2.8rem; background: var(--blush); display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; }
     #contact .section-title { color: var(--claret); }
     .contact-intro { font-size: 1rem; line-height: 1.85; color: #3A1A22; margin-bottom: 2rem; }
     .ci { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.2rem; }
@@ -222,84 +175,6 @@
     footer p { font-size: 0.8rem; color: rgba(212,145,154,0.55); }
     .footer-logo { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--dusty); font-weight: 700; }
 
-    /* GRAYSCALE + GRAIN */
-    .card-img:not(.card-img-ph) {
-      position: relative;
-      filter: grayscale(100%);
-      transition: filter 0.4s ease;
-    }
-    .card:hover .card-img {
-      filter: grayscale(0%);
-    }
-
-    /* Grain overlay */
-    .card-img:not(.card-img-ph)::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='250'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='250' height='250' filter='url(%23g)'/%3E%3C/svg%3E");
-      background-repeat: repeat;
-      background-size: 250px 250px;
-      mix-blend-mode: overlay;
-      opacity: 0.55;
-      pointer-events: none;
-      z-index: 3;
-      transition: opacity 0.4s ease;
-    }
-    .card:hover .card-img:not(.card-img-ph)::after {
-      opacity: 0.2;
-    }
-
-    /* ABOUT spacing */
-    #about { padding-top: 3.5rem; }
-
-    /* TESTIMONIAL */
-    #testimonial {
-      background: var(--dark);
-      padding: 6rem 8rem;
-      position: relative;
-      overflow: hidden;
-    }
-    #testimonial::before {
-      content: '\201C';
-      font-family: 'Playfair Display', serif;
-      font-weight: 900;
-      font-size: 22rem;
-      line-height: 1;
-      color: var(--claret);
-      opacity: 0.15;
-      position: absolute;
-      top: -3rem;
-      left: 4rem;
-      pointer-events: none;
-    }
-    .testimonial-inner { max-width: 860px; position: relative; z-index: 1; }
-    .testimonial-quote {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.3rem, 2.2vw, 1.85rem);
-      font-style: italic;
-      color: var(--white);
-      line-height: 1.7;
-      margin-bottom: 2.2rem;
-    }
-    .testimonial-quote em {
-      font-style: normal;
-      color: var(--dusty);
-      font-weight: 700;
-    }
-    .testimonial-cite {
-      display: inline-block;
-      font-family: 'Courier Prime', serif;
-      font-size: 0.78rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--peach-mid);
-      border-left: 3px solid var(--orange);
-      padding-left: 1rem;
-      line-height: 1.9;
-    }
-    .testimonial-cite span { display: block; color: rgba(240,160,106,0.55); letter-spacing: 0.08em; text-transform: none; font-size: 0.75rem; }
-
     /* ANIMATIONS */
     @keyframes fadeUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
     .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
@@ -315,7 +190,7 @@
       #clients { padding: 3rem 2rem; }
       #about, #contact { grid-template-columns: 1fr; gap: 3rem; }
       .about-visual { display: none; }
-      .projects-grid { grid-template-columns: 1fr; }
+      .projects-grid, .projects-grid-2 { grid-template-columns: 1fr; }
       footer { flex-direction: column; gap: 0.8rem; text-align: center; padding: 1.6rem 2rem; }
       .form-row { grid-template-columns: 1fr; }
     }
@@ -337,21 +212,20 @@
         <h1 class="hero-name">Hi, I'm <em>Erin.</em></h1>
       </div>
       <div class="hero-left-actions">
-        <p class="hero-tagline">14 years in creative &amp; content — delivering compelling social campaigns across prestige beauty, luxury and FMCG in global markets.</p>
+        <p class="hero-tagline">Creative, editorial and growth leadership across beauty, luxury and FMCG. Building campaigns, content ecosystems and creative effectiveness programmes that connect audience insight with commercial performance.</p>
         <a href="#projects" class="hero-cta">See My Work</a>
         <div class="hero-tags">
           <span class="hero-tag">Creative Direction</span>
-          <span class="hero-tag">Creative Strategy</span>
-          <span class="hero-tag">Social Strategy</span>
-          <span class="hero-tag">Analytics</span>
-          <span class="hero-tag">UGC</span>
-          <span class="hero-tag">Paid Media Creative Strategy</span>
+          <span class="hero-tag">Growth Strategy</span>
+          <span class="hero-tag">Creative Effectiveness</span>
+          <span class="hero-tag">Audience Intelligence</span>
+          <span class="hero-tag">Paid Media Creative</span>
+          <span class="hero-tag">AI-Enabled Workflows</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CLIENTS / LOGOS -->
   <div id="clients">
     <p class="clients-label">I've Worked With</p>
     <div class="logo-track-wrapper">
@@ -386,16 +260,17 @@
 
   <section id="about">
     <div class="about-visual reveal">
-      <div class="ab ab2"></div>
-      <div class="about-photo" style="background-image:url('image2.jpg')"></div>
+      <div class="about-photo-wrap">
+        <div class="ab2"></div>
+        <img src="image2.jpg" class="about-photo-img" alt="Erin Floyd" />
+      </div>
     </div>
     <div class="about-text reveal">
       <p class="section-label">About Me</p>
-      <h2 class="section-title">Creative &amp; Social Strategist</h2>
+      <h2 class="section-title">Growth Strategy &amp; Creative Direction</h2>
       <div class="divider"></div>
-      <p>Creative strategy and creative direction for prestige beauty social campaigns to drive measurable business results. Asset suites built on performance analytics and consumer insight.</p>
-      <p>Major beauty campaign experience. Leadership of creative, editorial, social teams, and creative production management. CIM- and APM-qualified.</p>
-      <p>Creative direction for beauty and luxury in stills and motion anchored in technical skillset — production, videography and photography for Harper's Bazaar, Tatler and Numéro. NCTJ-trained in journalism and PR; bylines for Vice and Dazed; editorial direction and scripting for beauty brands from UGC to global campaign narratives and TVC.</p>
+      <p>My background combines creative and editorial leadership with growth strategy. Across beauty, skincare and FMCG, I have developed campaigns, content ecosystems and creative effectiveness programmes that connect audience insight, creative execution, media performance and business outcomes.</p>
+      <p>I also design AI-enabled workflows that accelerate insight generation, campaign development and creative effectiveness analysis, allowing teams to make faster, evidence-based creative decisions at scale.</p>
       <p style="font-size:0.82rem; color: var(--mid); font-weight:700; letter-spacing:0.03em; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">Oxford MA &amp; BA 2:1 (Japanese: Literature &amp; Contemporary Art) &nbsp;·&nbsp; CIM &nbsp;·&nbsp; NCTJ &nbsp;·&nbsp; APM &nbsp;·&nbsp; GIA</p>
     </div>
   </section>
@@ -434,122 +309,209 @@
   </section>
 
   <section id="projects">
-    <p class="section-label reveal">Selected Work</p>
-    <h2 class="section-title reveal" style="white-space:nowrap;">Campaigns & Projects</h2>
+    <p class="section-label reveal">Capabilities &amp; Case Studies</p>
+    <h2 class="section-title reveal">Capabilities &amp; Case Studies</h2>
     <div class="divider reveal"></div>
-    <div class="projects-grid">
 
-      <div class="card reveal">
-        <div class="card-img" style="background-image:url('image29.jpg'); background-position: 70% center;"></div>
-        <div class="card-body">
-          <div class="card-num">01</div>
-          <p class="card-cat">Celebrity Social Campaign</p>
-          <h3 class="card-title"><span class="card-brand">MAC Cosmetics</span>Maura Higgins × MAC Celebrity Social Campaign</h3>
-          <p class="card-desc">Creative direction and content strategy for a buzz-driving disruptive celebrity social campaign starring Maura Higgins.</p>
-          <div class="card-kpis">
-            <div class="card-kpi"><span class="card-kpi-num">+75%</span><span class="card-kpi-label">Owned post engagement</span></div>
-            <div class="card-kpi"><span class="card-kpi-num">100%</span><span class="card-kpi-label">Product sell-through</span></div>
-            <div class="card-kpi"><span class="card-kpi-num">+40,000%</span><span class="card-kpi-label">Social interactions</span></div>
+    <!-- 1. Creative Effectiveness & Organisational Learning -->
+    <div class="capability-group">
+      <p class="capability-label reveal">Creative Effectiveness &amp; Organisational Learning</p>
+      <div class="projects-grid">
+
+        <!-- Card A: Independent Systems Design -->
+        <div class="card reveal">
+          <div class="card-img card-img-icon" style="background-image:url('cer.png'); background-size: contain; background-color: var(--blush);"></div>
+          <div class="card-body">
+            <div class="card-num">01</div>
+            <p class="card-cat">AI Platform Design</p>
+            <h3 class="card-title">Global Creative Effectiveness Platform</h3>
+            <a href="https://erinrfloyd.github.io/cerlivedemo/" target="_blank" class="card-demo-btn">See Live Demo</a>
+            <p class="card-desc">Designed and created a proprietary AI-powered platform capable of transforming paid social reporting into a continuous learning system across brands and markets. Connects audience insight and creative performance with media efficiencies for better media investment performance and decision making.</p>
+            <p class="card-outcome"><strong>Strategic outcome:</strong> Quantifies and links the contribution of creative to business performance.</p>
+            <ul class="card-bullets">
+              <li>Audience intelligence capability synthesising multi-source consumer research</li>
+              <li>Multi-level diagnostic framework isolating performance drivers</li>
+              <li>Forward-looking data-based recommendations</li>
+            </ul>
           </div>
         </div>
-      </div>
 
-      <div class="card reveal">
-        <div class="card-img" style="background-image:url('image30.jpg')"></div>
-        <div class="card-body">
-          <div class="card-num">02</div>
-          <p class="card-cat">Influencer, paid and organic social campaign</p>
-          <h3 class="card-title"><span class="card-brand">MAC Cosmetics</span>MACximal Silky Matte Social Campaign</h3>
-          <p class="card-desc">Creative strategy and creative direction for a paid and organic social media strategy and asset suite supporting a hero product relaunch. The campaign starred Danielle Marcan and UK beauty influencers and also encompassed AR.</p>
-          <div class="card-kpis">
-            <div class="card-kpi"><span class="card-kpi-num">+183%</span><span class="card-kpi-label">EMV over benchmark</span></div>
-            <div class="card-kpi"><span class="card-kpi-num">+15%</span><span class="card-kpi-label">Meta imp. over target</span></div>
-            <div class="card-kpi"><span class="card-kpi-num">+26%</span><span class="card-kpi-label">Owned social effectiveness</span></div>
+        <!-- Card B: Production Engine -->
+        <div class="card reveal">
+          <div class="card-img card-img-icon" style="background-image:url('production-engine.png'); background-size: contain; background-color: var(--blush);"></div>
+          <div class="card-body">
+            <div class="card-num">02</div>
+            <p class="card-cat">AI Preproduction Suite</p>
+            <h3 class="card-title"><span class="card-brand">Production Engine</span>AI Preproduction &amp; Scheduling System</h3>
+            <p class="card-desc">Built an operational AI preproduction suite reducing shoot and toolkit planning from approximately four days to under two hours. Includes a feasibility engine that benchmarks budgets against creative concepts, maximises output per shoot day and flags constraint and planning risks; plus an automated scheduling tool generating complex shoot schedules in under an hour.</p>
+            <div class="card-kpis">
+              <div class="card-kpi"><span class="card-kpi-num">4d→2h</span><span class="card-kpi-label">Planning time</span></div>
+              <div class="card-kpi"><span class="card-kpi-num">&lt;1hr</span><span class="card-kpi-label">Schedule generation</span></div>
+              <div class="card-kpi"><span class="card-kpi-num">360hrs</span><span class="card-kpi-label">Recoverable / yr (3 people × 4 projects)</span></div>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="card reveal">
-        <div class="card-img" style="background-image:url('mac-meta.jpg')"></div>
-        <div class="card-body">
-          <div class="card-num">08</div>
-          <p class="card-cat">Paid Media Creative Strategy</p>
-          <h3 class="card-title"><span class="card-brand">MAC Cosmetics</span>Studio Radiance Foundation Paid Ad Creative Strategy</h3>
-          <p class="card-desc">Analysed and built customer personas to define paid ad creative and build creative testing framework for persona messaging, audience targeting and creative effectiveness.</p>
-          <div class="card-kpis">
-            <div class="card-kpi"><span class="card-kpi-num">+31%</span><span class="card-kpi-label">Meta thruplays above target</span></div>
-            <div class="card-kpi"><span class="card-kpi-num">25,000</span><span class="card-kpi-label">TikTok leads</span></div>
-            <div class="card-kpi"><span class="card-kpi-num">+38%</span><span class="card-kpi-label">Reach over target</span></div>
+        <!-- Card C: MAC Regional Effectiveness -->
+        <div class="card reveal">
+          <div class="card-img" style="background-image:url('mac.png'); background-position: center 40%;"></div>
+          <div class="card-body">
+            <div class="card-num">03</div>
+            <p class="card-cat">Creative Effectiveness &amp; Content Strategy</p>
+            <h3 class="card-title"><span class="card-brand">MAC Cosmetics</span>Regional Creative Effectiveness Framework</h3>
+            <ul class="card-bullets">
+              <li>Defined regional creative effectiveness frameworks to improve content investment decisions</li>
+              <li>Synthesised market feedback and asset usage data to inform global content strategy</li>
+              <li>Influenced global content roadmaps through regional stakeholder leadership and advocacy</li>
+              <li>Established performance feedback mechanisms between local markets and global creative teams</li>
+              <li>Piloted modular content workflows to increase production efficiency and content adaptability</li>
+            </ul>
           </div>
         </div>
-      </div>
 
-      <div class="card reveal">
-        <div class="card-img" style="background-image:url('baj-influencer.webp')"></div>
-        <div class="card-body">
-          <div class="card-num">05</div>
-          <p class="card-cat">Influencer Marketing</p>
-          <h3 class="card-title"><span class="card-brand">British Academy of Jewellery</span>Influencer Marketing</h3>
-          <p class="card-desc">Developed and executed an influencer marketing strategy — identifying, briefing and managing creator partnerships to drive awareness and enrolment.</p>
-          <div class="card-kpis">
-            <div class="card-kpi"><span class="card-kpi-num">+1500%</span><span class="card-kpi-label">Social referral traffic WoW</span></div>
-            <div class="card-kpi"><span class="card-kpi-num">+1400%</span><span class="card-kpi-label">Daily organic interactions WoW</span></div>
-            <div class="card-kpi"><span class="card-kpi-num">+80%</span><span class="card-kpi-label">Reach WoW</span></div>
-          </div>
-        </div>
       </div>
-
-      <div class="card reveal">
-        <div class="card-img" style="background-image:url('image27.jpg')"></div>
-        <div class="card-body">
-          <div class="card-num">06</div>
-          <p class="card-cat">Brand Partnership</p>
-          <h3 class="card-title"><span class="card-brand">MAC Cosmetics × Lick</span>Disruptive Partnership Campaign</h3>
-          <p class="card-desc">Concept ideation and creative direction of a disruptive, brand equity-driving partnership campaign focused on social and built around shade within a new product launch.</p>
-          <div class="card-kpis">
-            <div class="card-kpi"><span class="card-kpi-num">100%</span><span class="card-kpi-label">Sell-through of product</span></div>
-            <div class="card-kpi"><span class="card-kpi-num">+300%</span><span class="card-kpi-label">Organic interactions WoW</span></div>
-            <div class="card-kpi"><span class="card-kpi-num">+34%</span><span class="card-kpi-label">Thruplay hold rate above benchmark</span></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="card reveal">
-        <div class="card-img" style="background-image:url('lamisil.jpg')"></div>
-        <div class="card-body">
-          <div class="card-num">04</div>
-          <p class="card-cat">Global Social &amp; UGC Toolkit</p>
-          <h3 class="card-title"><span class="card-brand">Lamisil</span>Global Social &amp; UGC Toolkit 2026</h3>
-          <p class="card-desc">Content strategy and creative direction for a paid social asset suite and creative direction guidelines and strategy for local market UGC.</p>
-        </div>
-      </div>
-
-      <div class="card reveal">
-        <div class="card-img" style="background-image:url('image31.png')"></div>
-        <div class="card-body">
-          <div class="card-num">07</div>
-          <p class="card-cat">Social Media Strategy</p>
-          <h3 class="card-title"><span class="card-brand">MAC Cosmetics</span>London Fashion Week</h3>
-          <p class="card-desc">Social media content strategy for MAC's global London Fashion Week content, directing a high-impact social presence across the brand's international channels.</p>
-        </div>
-      </div>
-
-      <div class="card reveal">
-        <div class="card-img" style="background-image:url('ugc.png')"></div>
-        <div class="card-body">
-          <div class="card-num">09</div>
-          <p class="card-cat">Creator Content Engine</p>
-          <h3 class="card-title"><span class="card-brand">Estée Lauder</span>UGC Content System</h3>
-          <p class="card-desc">End-to-end UGC production system with nano-creator network for reactive trend capture built to maximise content volume at low cost and scale winning messaging &amp; organic performance into paid media ROI and product sales.</p>
-          <div class="card-kpis">
-            <div class="card-kpi"><span class="card-kpi-num">10×</span><span class="card-kpi-label">Content output increase</span></div>
-            <div class="card-kpi"><span class="card-kpi-num">+28%</span><span class="card-kpi-label">Organic engagement rate</span></div>
-            <div class="card-kpi"><span class="card-kpi-num">−40%</span><span class="card-kpi-label">CPM</span></div>
-          </div>
-        </div>
-      </div>
-
     </div>
+
+    <!-- 2. Brand Building & Creative Direction -->
+    <div class="capability-group">
+      <p class="capability-label reveal">Brand Building &amp; Creative Direction</p>
+      <div class="projects-grid">
+
+        <div class="card reveal">
+          <div class="card-img" style="background-image:url('image29.jpg'); background-position: 70% center;"></div>
+          <div class="card-body">
+            <div class="card-num">04</div>
+            <p class="card-cat">Celebrity Campaign</p>
+            <h3 class="card-title"><span class="card-brand">MAC Cosmetics</span>Maura Higgins × MAC</h3>
+            <p class="card-desc">Creative direction and content strategy for a buzz-driving disruptive celebrity social campaign starring Maura Higgins.</p>
+            <div class="card-kpis">
+              <div class="card-kpi"><span class="card-kpi-num">+75%</span><span class="card-kpi-label">Owned post engagement</span></div>
+              <div class="card-kpi"><span class="card-kpi-num">100%</span><span class="card-kpi-label">Product sell-through</span></div>
+              <div class="card-kpi"><span class="card-kpi-num">+40,000%</span><span class="card-kpi-label">Social interactions</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card reveal">
+          <div class="card-img" style="background-image:url('image27.jpg')"></div>
+          <div class="card-body">
+            <div class="card-num">05</div>
+            <p class="card-cat">Brand Partnership</p>
+            <h3 class="card-title"><span class="card-brand">MAC Cosmetics × Lick</span>Disruptive Partnership Campaign</h3>
+            <p class="card-desc">Concept ideation and creative direction of a disruptive, brand equity-driving partnership campaign focused on social and built around shade within a new product launch.</p>
+            <div class="card-kpis">
+              <div class="card-kpi"><span class="card-kpi-num">100%</span><span class="card-kpi-label">Sell-through of product</span></div>
+              <div class="card-kpi"><span class="card-kpi-num">+300%</span><span class="card-kpi-label">Organic interactions WoW</span></div>
+              <div class="card-kpi"><span class="card-kpi-num">+34%</span><span class="card-kpi-label">Thruplay hold rate above benchmark</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card reveal">
+          <div class="card-img" style="background-image:url('image31.png')"></div>
+          <div class="card-body">
+            <div class="card-num">06</div>
+            <p class="card-cat">Global Campaign</p>
+            <h3 class="card-title"><span class="card-brand">MAC Cosmetics</span>London Fashion Week</h3>
+            <p class="card-desc">Creative leadership for MAC's global London Fashion Week content strategy, directing a high-impact presence across the brand's international channels.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 3. Audience Growth & Content Ecosystems -->
+    <div class="capability-group">
+      <p class="capability-label reveal">Audience Growth &amp; Content Ecosystems</p>
+      <div class="projects-grid">
+
+        <div class="card reveal">
+          <div class="card-img" style="background-image:url('mactrend.png')"></div>
+          <div class="card-body">
+            <div class="card-num">07</div>
+            <p class="card-cat">Content Ecosystem</p>
+            <h3 class="card-title"><span class="card-brand">MAC Cosmetics</span>MAC Trend UK</h3>
+            <p class="card-desc">Developed trend-led reactive content function into an audience-led strategic social-first content ecosystem designed to identify emerging consumer interests, cultural conversations and creative opportunities, feeding high-performing concepts into CRM and paid social activity.</p>
+            <div class="card-kpis">
+              <div class="card-kpi"><span class="card-kpi-num">+431%</span><span class="card-kpi-label">CRM engagement</span></div>
+              <div class="card-kpi"><span class="card-kpi-num">+126%</span><span class="card-kpi-label">Sales WoW</span></div>
+              <div class="card-kpi"><span class="card-kpi-num">Sell-out</span><span class="card-kpi-label">Product performance</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card reveal">
+          <div class="card-img" style="background-image:url('ugc.png')"></div>
+          <div class="card-body">
+            <div class="card-num">08</div>
+            <p class="card-cat">Audience Growth &amp; Learning Engine</p>
+            <h3 class="card-title"><span class="card-brand">Estée Lauder</span>UGC Content System</h3>
+            <p class="card-desc">Audience growth and learning engine built on trend identification, a nano-creator ecosystem and systematic organic testing. Identified winning messages and formats through creator content, scaled organic performance insights into paid media, and drove measurable improvements in ROI and product sales.</p>
+            <div class="card-kpis">
+              <div class="card-kpi"><span class="card-kpi-num">10×</span><span class="card-kpi-label">Content output increase</span></div>
+              <div class="card-kpi"><span class="card-kpi-num">+28%</span><span class="card-kpi-label">Organic engagement rate</span></div>
+              <div class="card-kpi"><span class="card-kpi-num">CPA↓</span><span class="card-kpi-label">CPA reduction</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card reveal">
+          <div class="card-img" style="background-image:url('fashion.jpg'); background-position: center 20%;"></div>
+          <div class="card-body">
+            <div class="card-num">09</div>
+            <p class="card-cat">Editorial Leadership &amp; Audience Development</p>
+            <h3 class="card-title"><span class="card-brand">FashionNetwork</span>English-Language Editorial Strategy</h3>
+            <p class="card-desc">Led editorial strategy and content output across five fashion and beauty verticals at FashionNetwork.com, managing a global team of 15 editors, journalists and translators across eight time zones. Grew subscriber acquisition by up to 246% across international markets while reducing departmental expenditure by 13%.</p>
+            <div class="card-kpis">
+              <div class="card-kpi"><span class="card-kpi-num">+246%</span><span class="card-kpi-label">Subscriber acquisition</span></div>
+              <div class="card-kpi"><span class="card-kpi-num">15</span><span class="card-kpi-label">Team managed</span></div>
+              <div class="card-kpi"><span class="card-kpi-num">5</span><span class="card-kpi-label">Verticals led</span></div>
+              <div class="card-kpi"><span class="card-kpi-num">−13%</span><span class="card-kpi-label">Dept. expenditure</span></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 4. Paid Creative Strategy & Testing Frameworks -->
+    <div class="capability-group">
+      <p class="capability-label reveal">Paid Creative Strategy &amp; Testing Frameworks</p>
+      <div class="projects-grid-2">
+
+        <div class="card reveal">
+          <div class="card-img" style="background-image:url('mac-meta.jpg')"></div>
+          <div class="card-body">
+            <div class="card-num">10</div>
+            <p class="card-cat">Paid Creative Strategy</p>
+            <h3 class="card-title"><span class="card-brand">MAC Cosmetics</span>Studio Radiance Foundation Paid Creative Strategy</h3>
+            <p class="card-desc">Led audience research and persona development to define the insight foundation for paid creative strategy. Translated persona analysis into a messaging hierarchy, creative hypotheses and a structured testing framework — enabling systematic creative experimentation across audience segments. Directed creative optimisation based on performance data, improving thruplay rates, lead volume and reach against paid targets.</p>
+            <div class="card-kpis">
+              <div class="card-kpi"><span class="card-kpi-num">+31%</span><span class="card-kpi-label">Meta thruplays above target</span></div>
+              <div class="card-kpi"><span class="card-kpi-num">25,000</span><span class="card-kpi-label">TikTok leads</span></div>
+              <div class="card-kpi"><span class="card-kpi-num">+38%</span><span class="card-kpi-label">Reach over target</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card reveal">
+          <div class="card-img" style="background-image:url('foot.jpg'); background-position: center bottom;"></div>
+          <div class="card-body">
+            <div class="card-num">11</div>
+            <p class="card-cat">Paid Creative Strategy</p>
+            <h3 class="card-title"><span class="card-brand">Karo Health</span>CCS Foot Care — Removing the Creative Constraint to Growth</h3>
+            <p class="card-desc">Diagnosed creative as the primary growth constraint within a profitable Meta programme. Developed an audience-first testing framework informed by consumer research, alongside implementing a best-practice UGC creative structure and shifting late asset messaging from product features to real consumer pain points.</p>
+            <div class="card-kpis">
+              <div class="card-kpi"><span class="card-kpi-num">+21%</span><span class="card-kpi-label">Hook retention</span></div>
+              <div class="card-kpi"><span class="card-kpi-num">+0.9pp</span><span class="card-kpi-label">CTR</span></div>
+              <div class="card-kpi"><span class="card-kpi-num">2.4×</span><span class="card-kpi-label">ROAS vs. control</span></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
   </section>
 
   <section id="photography">
@@ -574,10 +536,6 @@
       <h2 class="section-title">Let's work together</h2>
       <div class="divider"></div>
       <p class="contact-intro">Whether you have a project in mind, want to collaborate, or just want to say hello — I'd love to hear from you.</p>
-      <div class="ci">
-        <div class="ci-icon">✉</div>
-        <div class="ci-detail"><span>Email</span><a href="/cdn-cgi/l/email-protection#d8b0bdb4b4b798bdaab1b6f6bbb7b5"><span class="__cf_email__" data-cfemail="9ff7faf3f3f0dffaedf6f1b1fcf0f2">[email&#160;protected]</span></a></div>
-      </div>
       <div class="ci">
         <div class="ci-icon" style="font-size:0.75rem;font-weight:700;">in</div>
         <div class="ci-detail"><span>LinkedIn</span><a href="#">linkedin.com/in/erin</a></div>
@@ -606,7 +564,7 @@
     <p>Designed with intention.</p>
   </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  <script>
     const reveals = document.querySelectorAll('.reveal');
     const obs = new IntersectionObserver((entries) => {
       entries.forEach((e, i) => {
